@@ -1,0 +1,56 @@
+.agreement {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio {
+    display: flex;
+    gap: 20px;
+
+    label {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+
+    input {
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    input[type='radio']:checked + .checkmark {
+        background: #9dd3f7;
+
+        &::after {
+            display: block;
+        }
+    }
+}
+
+.checkmark {
+    height: 22px;
+    width: 22px;
+    background-color: white;
+    border: 1px solid #9DD3F7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        display: none;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    &:hover {
+        background: rgb(213, 213, 213);
+    }
+}

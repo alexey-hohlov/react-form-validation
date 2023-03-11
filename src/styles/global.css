@@ -17,4 +17,45 @@ code {
     margin: 0;
     padding: 0;
     list-style: none;
+    font-family: Raleway;
+}
+
+@font-face {
+    font-family: RalewayLight;
+    src: url(../assets/fonts/Raleway/Raleway-Light.ttf);
+}
+
+@font-face {
+    font-family: RalewayLightItallic;
+    src: url(../assets/fonts/Raleway/Raleway-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url(../assets/fonts/Raleway/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: RalewayItallic;
+    src: url(../assets//fonts/Raleway/Raleway-Italic.ttf);
+}
+
+@font-face {
+    font-family: RalewaySemiBold;
+    src: url(../assets/fonts/Raleway/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: RalewaySemiBoldItallic;
+    src: url(../assets/fonts/Raleway/Raleway-SemiBoldItalic.ttf);
+}
+
+@font-face {
+    font-family: RalewayBold;
+    src: url(../assets/fonts/Raleway/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: RalewayBoldItallic;
+    src: url(../assets//fonts/Raleway/Raleway-BoldItalic.ttf);
 }
