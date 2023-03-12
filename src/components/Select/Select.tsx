@@ -1,10 +1,11 @@
 import { useController } from 'react-hook-form';
+import { IValidation } from '../../types/formTypes';
 import styles from './Select.module.scss';
 
 interface Props {
     label: string;
     name: string;
-    validations?: any;
+    validations?: IValidation;
     options: Array<string>;
     placeholder: string | number;
     required: boolean;

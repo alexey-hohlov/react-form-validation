@@ -6,3 +6,12 @@ export interface IData {
     email: string;
     address: string;
 }
+
+export interface IValidation {
+    required?: string;
+    minLength?: number;
+    pattern?: {
+        value: RegExp;
+        message: string;
+    };
+}

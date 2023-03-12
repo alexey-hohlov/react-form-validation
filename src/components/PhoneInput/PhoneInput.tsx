@@ -1,15 +1,21 @@
 import { useController, useFormContext } from 'react-hook-form';
 import { withHookFormMask } from 'use-mask-input';
+import { IValidation } from '../../types/formTypes';
 import styles from './PhoneInput.module.scss';
 
 interface Props {
     label: string;
     name: string;
-    validations: any;
+    validations: IValidation;
     required: boolean;
 }
 
-const PhoneInput: React.FC<Props> = ({ label, name, validations, required }) => {
+const PhoneInput: React.FC<Props> = ({
+    label,
+    name,
+    validations,
+    required,
+}) => {
     // we need FormContext here to link UseMaskInput with React Form
     const { register } = useFormContext();
 

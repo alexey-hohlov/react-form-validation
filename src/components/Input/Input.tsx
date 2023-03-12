@@ -1,10 +1,11 @@
 import { useController, useFormContext } from 'react-hook-form';
+import { IValidation } from '../../types/formTypes';
 import styles from './Input.module.scss';
 
 interface Props {
     label: string;
     name: string;
-    validations?: any;
+    validations?: IValidation;
     type: string;
     required: boolean;
 }
