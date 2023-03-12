@@ -61,7 +61,7 @@ const Form: React.FC = () => {
     return (
         <FormProvider {...methods}>
             <form className={styles.form} onSubmit={onSubmit}>
-                <h1>React Validation Form</h1>
+                <h1>React Form Validation</h1>
                 <div className={styles.inputs}>
                     <Input
                         label={'Name'}
