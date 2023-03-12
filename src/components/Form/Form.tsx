@@ -33,6 +33,7 @@ const Form: React.FC = () => {
 
     const methods = useForm<IData>({ mode: 'onBlur', defaultValues });
 
+    //handlers for submit, reset, and popup close
     const onSubmit = methods.handleSubmit(data => {
         switch (agreement) {
             case true:
@@ -46,6 +47,11 @@ const Form: React.FC = () => {
                 break;
         }
     });
+
+    const onClose = () => {
+        handleReset();
+        setIsOpen(false);
+    };
 
     const handleReset = () => {
         methods.reset();
@@ -120,13 +126,7 @@ const Form: React.FC = () => {
                     />
                 </div>
             </form>
-            <Popup
-                isOpen={isOpen}
-                onClose={() => {
-                    setIsOpen(false);
-                }}
-                data={data}
-            />
+            <Popup isOpen={isOpen} onClose={onClose} data={data} />
         </FormProvider>
     );
 };
