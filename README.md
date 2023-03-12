@@ -1,8 +1,8 @@
 # Validated form on React for a test task
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/79412122/224561402-c55b41d4-a7b0-4466-993d-bf0ad0906e4f.png" width=400>
-  <img src="https://user-images.githubusercontent.com/79412122/224561441-6e23723c-4a25-4c48-95a7-8e8dac4f3448.png" width=400>
+  <img src="https://user-images.githubusercontent.com/79412122/224565327-eda06758-cbf7-4ec2-8cb3-ad003c1fb368.png" width=400>
+  <img src="https://user-images.githubusercontent.com/79412122/224565345-c2236aaa-49b5-44db-af22-71e3a23b7931.png" width=400>
 </p>
 
 ## 💻 Technologies
