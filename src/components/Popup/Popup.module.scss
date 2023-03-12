@@ -14,6 +14,10 @@
     opacity: 0;
     transition: opacity 0.4s ease;
     overflow: hidden;
+    padding: {
+        left: 10px;
+        right: 10px;
+    }
 }
 
 .content {
@@ -22,7 +26,6 @@
     padding: 20px;
     transform: scale(0.5);
     transition: 0.4s all;
-
 
     display: flex;
     flex-direction: column;
@@ -37,7 +40,7 @@
 }
 
 .text {
-
+    text-align: center;
     span {
         color: #dc143c;
         font-family: RalewaySemiBold;
@@ -48,4 +51,10 @@
     opacity: 1;
     pointer-events: all;
     transform: scale(1);
+}
+
+@media screen and (max-width: 380px) {
+    .popup {
+        width: unset;
+    }
 }

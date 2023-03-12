@@ -4,7 +4,7 @@
     border-radius: 20px;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: auto auto 70px;
+    grid-template-rows: auto auto auto;
     gap: 15px;
     padding: 15px;
 
@@ -15,6 +15,7 @@
     h1 {
         place-self: center;
         font-family: RalewayBold;
+        text-align: center;
     }
 }
 
@@ -35,5 +36,23 @@
     button {
         width: 150px;
         height: 50px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .form {
+        min-width: unset;
+    }
+
+    .buttons {
+        gap: 30px;
+    }
+}
+
+
+@media screen and (max-width: 380px) {
+    .buttons {
+        flex-direction: column;
+        gap: 20px;
     }
 }

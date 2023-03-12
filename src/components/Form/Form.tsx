@@ -20,8 +20,8 @@ const Form: React.FC = () => {
 
     // same result can be reached with <IData | undifined> type, but I don't want to use undefined
     const [data, setData] = useState<IData>({
-        name: 'Jack',
-        surname: 'London',
+        name: '',
+        surname: '',
         birthDate: '',
         sex: '',
         email: '',
