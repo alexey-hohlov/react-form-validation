@@ -21,6 +21,11 @@ const Form: React.FC = () => {
             : alert('To continue you should agree to submit your info');
     });
 
+    const handleReset = () => {
+        methods.reset();
+        setAgreement(false);
+    };
+
     return (
         <FormProvider {...methods}>
             <form className={styles.form} onSubmit={onSubmit}>
@@ -61,17 +66,14 @@ const Form: React.FC = () => {
                     type={'text'}
                     validations={validations.email}
                 />
-                <Input
-                    label={'Address'}
-                    name={'address'}
-                    type={'text'}
-                />
+                <Input label={'Address'} name={'address'} type={'text'} />
                 <Agreement setAgreement={setAgreement} />
                 <Button
                     title={'Submit'}
                     isDisabled={!methods.formState.isValid}
+                    onClick={onSubmit}
                 />
-                <Button title={'Reset'} />
+                <Button title={'Reset'} onClick={handleReset} />
             </form>
         </FormProvider>
     );
