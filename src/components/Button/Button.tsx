@@ -4,11 +4,31 @@ interface Props {
     title: string;
     isDisabled?: boolean;
     onClick: () => void;
+    color: string;
 }
 
-const Button: React.FC<Props> = ({ title, isDisabled, onClick }) => {
+const Button: React.FC<Props> = ({ title, isDisabled, onClick, color }) => {
+    const handleColor = () => {
+        switch (color) {
+            case 'green':
+                return styles.green;
+            case 'red':
+                return styles.red;
+            case 'pink':
+                return styles.pink;
+            case 'blue':
+                return styles.blue;
+            default:
+                break;
+        }
+    };
+
     return (
-        <button disabled={isDisabled} onClick={onClick}>
+        <button
+            className={`${styles.button} ${handleColor()}`}
+            disabled={isDisabled}
+            onClick={onClick}
+        >
             {title}
         </button>
     );

@@ -7,6 +7,7 @@ interface Props {
     validations?: any;
     options: Array<string>;
     placeholder: string | number;
+    required: boolean;
 }
 
 const Select: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const Select: React.FC<Props> = ({
     validations,
     options,
     placeholder,
+    required,
 }) => {
     const {
         field,
@@ -23,7 +25,10 @@ const Select: React.FC<Props> = ({
 
     return (
         <label className={styles.wrapper}>
-            {label}
+            <div className={styles.header}>
+                {label}
+                {required && <span>*</span>}
+            </div>
             <select className={styles.select} {...field}>
                 <option className={styles.placeholder}>{placeholder}</option>
                 {options.map((option, index) => (
@@ -36,6 +41,7 @@ const Select: React.FC<Props> = ({
                     </option>
                 ))}
             </select>
+            <span></span>
         </label>
     );
 };

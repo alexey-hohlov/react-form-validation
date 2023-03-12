@@ -1,8 +1,35 @@
 .form {
     background: white;
-    width: 550px;
-    min-height: 600px;
+    min-width: 550px;
     border-radius: 20px;
     display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 70px;
+    gap: 15px;
     padding: 15px;
+
+    h1 {
+        place-self: center;
+        font-family: RalewayBold;
+    }
+}
+
+.inputs {
+    justify-self: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    button {
+        width: 150px;
+        height: 50px;
+    }
 }

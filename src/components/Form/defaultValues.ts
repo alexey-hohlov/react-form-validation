@@ -2,7 +2,6 @@
 
 export const defaultValues = {
     name: '',
-
     surname: '',
     birthDate: '',
     sex: '',

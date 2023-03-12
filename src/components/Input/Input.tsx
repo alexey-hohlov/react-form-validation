@@ -6,6 +6,7 @@ interface Props {
     name: string;
     validations?: any;
     type: string;
+    required: boolean;
 }
 
 const Input: React.FC<Props> = ({
@@ -13,6 +14,7 @@ const Input: React.FC<Props> = ({
     label,
     validations,
     type,
+    required,
 }) => {
     const {
         field,
@@ -21,13 +23,16 @@ const Input: React.FC<Props> = ({
 
     return (
         <label className={styles.wrapper}>
-            {label}
+            <div className={styles.header}>
+                {label}
+                {required && <span>*</span>}
+            </div>
             <input
                 className={`${styles.input} ${error && styles.error}`}
                 type={type}
                 {...field}
             />
-            {error && <span>{error.message}</span>}
+            <span>{error && error.message}</span>
         </label>
     );
 };

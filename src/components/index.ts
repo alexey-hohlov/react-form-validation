@@ -8,3 +8,6 @@ export { default as PhoneInput } from './PhoneInput/PhoneInput';
 
 // Button
 export { default as Button } from './Button/Button';
+
+// Pop-up
+export { default as Popup } from './Popup/Popup';
