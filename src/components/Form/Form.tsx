@@ -31,7 +31,7 @@ const Form: React.FC = () => {
     // options for sex select field
     const sex = ['male', 'female'];
 
-    const methods = useForm<IData>({ mode: 'onChange', defaultValues });
+    const methods = useForm<IData>({ mode: 'onBlur', defaultValues });
 
     const onSubmit = methods.handleSubmit(data => {
         switch (agreement) {
@@ -82,7 +82,6 @@ const Form: React.FC = () => {
                         label={'Sex'}
                         name={'sex'}
                         options={sex}
-                        placeholder={''}
                         validations={validations.sex}
                         required={true}
                     />

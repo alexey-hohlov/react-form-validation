@@ -5,6 +5,9 @@
 
     span {
         height: 14px;
+        font-size: 14px;
+        color: #dc143c;
+        font-family: RalewayItallic;
     }
 }
 
@@ -29,6 +32,14 @@
     &:focus {
         outline: none;
         border: 1px solid #9dd3f7;
+    }
+}
+
+.error {
+    border: 1px solid #dc143c;
+
+    &:focus {
+        border: 1px solid #dc143c;
     }
 }
 

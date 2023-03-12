@@ -7,7 +7,6 @@ interface Props {
     name: string;
     validations?: IValidation;
     options: Array<string>;
-    placeholder: string | number;
     required: boolean;
 }
 
@@ -16,7 +15,6 @@ const Select: React.FC<Props> = ({
     name,
     validations,
     options,
-    placeholder,
     required,
 }) => {
     const {
@@ -30,8 +28,11 @@ const Select: React.FC<Props> = ({
                 {label}
                 {required && <span>*</span>}
             </div>
-            <select className={styles.select} {...field}>
-                <option className={styles.placeholder}>{placeholder}</option>
+            <select
+                className={`${styles.select} ${error && styles.error}`}
+                {...field}
+            >
+                <option className={styles.placeholder}></option>
                 {options.map((option, index) => (
                     <option
                         className={styles.option}
@@ -42,7 +43,7 @@ const Select: React.FC<Props> = ({
                     </option>
                 ))}
             </select>
-            <span></span>
+            <span>{error && error.message}</span>
         </label>
     );
 };
