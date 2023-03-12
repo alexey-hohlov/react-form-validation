@@ -1,17 +1,23 @@
 //validation rules for form fields
 
+const defaultMessage = 'This field is required';
+
 export const validations = {
     name: {
-        required: 'This field is required',
+        required: defaultMessage,
     },
     surname: {
-        required: 'This field is required',
+        required: defaultMessage,
     },
     birthDate: {
-        required: 'This field is required',
+        required: defaultMessage,
     },
     sex: {
-        required: 'This field is required',
+        required: defaultMessage,
+    },
+    phone: {
+        required: defaultMessage,
+        minLength: 18,
     },
     email: {
         pattern: {

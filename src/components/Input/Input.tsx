@@ -1,11 +1,10 @@
-import { useController } from 'react-hook-form';
+import { useController, useFormContext } from 'react-hook-form';
 import styles from './Input.module.scss';
 
 interface Props {
     label: string;
     name: string;
     validations?: any;
-    defaultValue: string | number;
     type: string;
 }
 
@@ -13,13 +12,12 @@ const Input: React.FC<Props> = ({
     name,
     label,
     validations,
-    defaultValue,
     type,
 }) => {
     const {
         field,
         fieldState: { error },
-    } = useController({ name, rules: validations, defaultValue });
+    } = useController({ name, rules: validations });
 
     return (
         <label className={styles.wrapper}>
