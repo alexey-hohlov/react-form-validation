@@ -5,33 +5,33 @@ interface Props {
 }
 
 const Agreement: React.FC<Props> = ({ setAgreement }) => {
+    // onClick event on labels we need because of custom checkmarks
+
     return (
         <div className={styles.agreement}>
             Do you agree to submit your infos?
             <div className={styles.radio}>
-                <label>
+                <label
+                    onClick={() => {
+                        setAgreement(false);
+                    }}
+                >
                     No
                     <input
                         type='radio'
                         name='agreement'
                         defaultChecked={true}
                     />
-                    <span
-                        className={styles.checkmark}
-                        onClick={() => {
-                            setAgreement(false);
-                        }}
-                    ></span>
+                    <span className={styles.checkmark}></span>
                 </label>
-                <label>
+                <label
+                    onClick={() => {
+                        setAgreement(true);
+                    }}
+                >
                     Yes
                     <input type='radio' name='agreement' />
-                    <span
-                        className={styles.checkmark}
-                        onClick={() => {
-                            setAgreement(true);
-                        }}
-                    ></span>
+                    <span className={styles.checkmark}></span>
                 </label>
             </div>
         </div>
