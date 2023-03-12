@@ -20,6 +20,7 @@
 * Phone number mask
 * Fields reset
 * Gratitude popup after validation
+* Adaptive
 
 ## 🤖 How to run
 
