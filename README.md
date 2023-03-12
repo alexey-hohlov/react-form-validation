@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/79412122/224561402-c55b41d4-a7b0-4466-993d-bf0ad0906e4f.png" width=300>
-  <img src="https://user-images.githubusercontent.com/79412122/224561441-6e23723c-4a25-4c48-95a7-8e8dac4f3448.png">
+  <img src="https://user-images.githubusercontent.com/79412122/224561402-c55b41d4-a7b0-4466-993d-bf0ad0906e4f.png" width=400>
+  <img src="https://user-images.githubusercontent.com/79412122/224561441-6e23723c-4a25-4c48-95a7-8e8dac4f3448.png" width=400>
 </p>
 
 #### Validated form on React for a test task
