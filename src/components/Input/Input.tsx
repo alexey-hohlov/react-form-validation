@@ -1,4 +1,4 @@
-import { useController, useFormContext } from 'react-hook-form';
+import { useController } from 'react-hook-form';
 import { IValidation } from '../../types/formTypes';
 import styles from './Input.module.scss';
 
