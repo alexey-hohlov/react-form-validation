@@ -12,7 +12,6 @@
 * React Hook Form
 * Use Mask Input
 * SCSS
-* css-modules
 
 ## 🚀 Features
 
