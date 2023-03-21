@@ -15,7 +15,7 @@
 
 ## 🚀 Features
 
-* Validated fields: text, email, phone number, birth date and select-input
+* Validated fields: text, email, phone number, date and select-input
 * Phone number mask
 * Fields reset
 * Gratitude popup after validation
