@@ -1,4 +1,4 @@
-# Validated form on React for a test task
+# Validated form on React
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/79412122/224565327-eda06758-cbf7-4ec2-8cb3-ad003c1fb368.png" width=400>
