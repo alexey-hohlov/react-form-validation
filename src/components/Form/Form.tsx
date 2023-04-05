@@ -18,7 +18,7 @@ const Form: React.FC = () => {
     const [agreement, setAgreement] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
-    // same result can be reached with <IData | undifined> type, but I don't want to use undefined
+    // same result can be reached with <IData | undefined> type, but I don't want to use undefined
     const [data, setData] = useState<IData>({
         name: '',
         surname: '',
@@ -31,7 +31,7 @@ const Form: React.FC = () => {
     // options for sex select field
     const sex = ['male', 'female'];
 
-    const methods = useForm<IData>({ mode: 'onBlur', defaultValues });
+    const methods = useForm<IData>({ mode: 'all', defaultValues });
 
     //handlers for submit, reset, and popup close
     const onSubmit = methods.handleSubmit(data => {
