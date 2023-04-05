@@ -1,0 +1,41 @@
+.modal {
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    overflow: hidden;
+    padding: {
+        left: 10px;
+        right: 10px;
+    }
+}
+
+.content {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    transform: scale(0.5);
+    transition: 0.4s all;
+}
+
+.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+@media screen and (max-width: 380px) {
+    .popup {
+        width: unset;
+    }
+}
