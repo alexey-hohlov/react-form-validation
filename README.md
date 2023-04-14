@@ -9,6 +9,7 @@
 
 * TypeScript
 * React
+* Redux Toolkit
 * React Hook Form
 * Use Mask Input
 * SCSS
