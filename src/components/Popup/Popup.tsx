@@ -1,5 +1,5 @@
 import { IData } from '../../types/formTypes';
-import Button from '../Button/Button';
+import Button from '../common/Button/Button';
 import styles from './Popup.module.scss';
 
 interface Props {

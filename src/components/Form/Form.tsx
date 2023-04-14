@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import {
     Agreement,
@@ -12,33 +11,26 @@ import { IData } from '../../types/formTypes';
 import styles from './Form.module.scss';
 import { validations } from './validations';
 import { defaultValues } from './defaultValues';
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
+import { formSlice } from '../../store/reducers/formReducer';
 
 const Form: React.FC = () => {
-    // states for user agreement, data and popup
-    const [agreement, setAgreement] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
-
-    // same result can be reached with <IData | undifined> type, but I don't want to use undefined
-    const [data, setData] = useState<IData>({
-        name: '',
-        surname: '',
-        birthDate: '',
-        sex: '',
-        email: '',
-        address: '',
-    });
+    // redux states and actions
+    const dispatch = useAppDispatch();
+    const { agreement, popup, data } = useAppSelector(state => state.formReducer);
+    const { setPopup, setAgreement, setData } = formSlice.actions;
 
     // options for sex select field
     const sex = ['male', 'female'];
 
-    const methods = useForm<IData>({ mode: 'onBlur', defaultValues });
+    const methods = useForm<IData>({ mode: 'all', defaultValues });
 
     //handlers for submit, reset, and popup close
     const onSubmit = methods.handleSubmit(data => {
         switch (agreement) {
             case true:
-                setData(data);
-                setIsOpen(true);
+                dispatch(setData(data))
+                dispatch(setPopup(true));
                 break;
             case false:
                 alert('To continue you should agree to submit your info');
@@ -50,12 +42,12 @@ const Form: React.FC = () => {
 
     const onClose = () => {
         handleReset();
-        setIsOpen(false);
+        dispatch(setPopup(false));
     };
 
     const handleReset = () => {
         methods.reset();
-        setAgreement(false);
+        dispatch(setAgreement(false));
     };
 
     return (
@@ -110,7 +102,7 @@ const Form: React.FC = () => {
                         type={'text'}
                         required={false}
                     />
-                    <Agreement setAgreement={setAgreement} />
+                    <Agreement />
                 </div>
                 <div className={styles.buttons}>
                     <Button
@@ -126,7 +118,7 @@ const Form: React.FC = () => {
                     />
                 </div>
             </form>
-            <Popup isOpen={isOpen} onClose={onClose} data={data} />
+            <Popup isOpen={popup} onClose={onClose} data={data} />
         </FormProvider>
     );
 };

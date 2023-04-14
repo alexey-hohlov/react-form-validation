@@ -1,11 +1,11 @@
+import { useAppDispatch } from '../../hooks/reduxHooks';
 import styles from './Agreement.module.scss';
+import { formSlice } from '../../store/reducers/formReducer';
 
-interface Props {
-    setAgreement: (value: boolean) => void;
-}
-
-const Agreement: React.FC<Props> = ({ setAgreement }) => {
+const Agreement: React.FC = () => {
     // onClick event on labels we need because of custom checkmarks
+    const { setAgreement } = formSlice.actions;
+    const dispatch = useAppDispatch();
 
     return (
         <div className={styles.agreement}>
@@ -13,7 +13,7 @@ const Agreement: React.FC<Props> = ({ setAgreement }) => {
             <div className={styles.radio}>
                 <label
                     onClick={() => {
-                        setAgreement(false);
+                        dispatch(setAgreement(false));
                     }}
                 >
                     No
@@ -26,7 +26,7 @@ const Agreement: React.FC<Props> = ({ setAgreement }) => {
                 </label>
                 <label
                     onClick={() => {
-                        setAgreement(true);
+                        dispatch(setAgreement(true));
                     }}
                 >
                     Yes
