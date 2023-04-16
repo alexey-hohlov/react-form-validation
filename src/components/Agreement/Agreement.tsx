@@ -4,6 +4,7 @@ import { formSlice } from '../../store/reducers/formReducer';
 
 const Agreement: React.FC = () => {
     // onClick event on labels we need because of custom checkmarks
+    // stopPropagation() on inputs need to disable double check on labels
     const { setAgreement } = formSlice.actions;
     const dispatch = useAppDispatch();
 
@@ -14,6 +15,7 @@ const Agreement: React.FC = () => {
                 <label
                     onClick={() => {
                         dispatch(setAgreement(false));
+                        console.log('fired no!');
                     }}
                 >
                     No
@@ -21,6 +23,9 @@ const Agreement: React.FC = () => {
                         type='radio'
                         name='agreement'
                         defaultChecked={true}
+                        onClick={e => {
+                            e.stopPropagation();
+                        }}
                     />
                     <span className={styles.checkmark}></span>
                 </label>
@@ -30,7 +35,13 @@ const Agreement: React.FC = () => {
                     }}
                 >
                     Yes
-                    <input type='radio' name='agreement' />
+                    <input
+                        type='radio'
+                        name='agreement'
+                        onClick={e => {
+                            e.stopPropagation();
+                        }}
+                    />
                     <span className={styles.checkmark}></span>
                 </label>
             </div>
